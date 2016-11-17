@@ -8,10 +8,10 @@ namespace QBdd.Tests
         [Test]
         public void FooMethod_ForBarFunctionReturning1_ShouldReturn1()
         {
-            var mockedFoo = Mockery.Create<Foo>();
-            mockedFoo.Stub<IBar>(x => x.BarFunction()).Return(1);
+            var fooContext = Mockery.Create<Foo>();
+            fooContext.Stub<IBar>(x => x.BarFunction()).Return(1);
 
-            var result = mockedFoo.UnderTest.FooMethod();
+            var result = fooContext.UnderTest.FooMethod();
 
             Assert.AreEqual(1, result);
         }

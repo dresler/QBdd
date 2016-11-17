@@ -6,7 +6,7 @@ namespace QBdd.Tests
     /// <summary>
     /// Example of a usage of BddTestsBase<T>.
     /// </summary>
-    public class FooBddTestsWithContext : BddTestsBase<Foo>
+    public class When_FooMethod: BddTestsBase<Foo>
     {
         private int _result;
 
@@ -21,13 +21,13 @@ namespace QBdd.Tests
         }
 
         [Then]
-        public void ShouldReturnExpected()
+        public void ItShouldReturnExpected()
         {
             Assert.AreEqual(1, _result);
         }
 
         [Then]
-        public void ShouldCallFuzzMethod()
+        public void ItShouldCallFuzzMethod()
         {
             Context.AssertWasCalled<IFuzz>(x => x.FuzzMethod(Arg<int>.Is.Anything));
         }

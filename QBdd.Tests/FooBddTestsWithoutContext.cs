@@ -6,7 +6,7 @@ namespace QBdd.Tests
     /// <summary>
     /// Example of a usage of BddTestsBase without support of MockedContext.
     /// </summary>
-    public class FooBddTestsWithoutContext : BddTestsBase
+    public class When_FooMethod_Without_Context : BddTestsBase
     {
         private IBar barMock;
         private IFuzz fuzzMock;
