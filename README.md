@@ -27,6 +27,29 @@ fooContext.Stub<IBar>(x => x.BarFunction()).Return(1);
 var result = fooContext.UnderTest.FooMethod();
 ```
 
+where
+
+```C#
+public class Foo
+{
+    private IBar Bar { get; }
+    private IFuzz Fuzz { get; }
+
+    public Foo(IBar bar, IFuzz fuzz)
+    {
+        Bar = bar;
+        Fuzz = fuzz;
+    }
+
+    public int FooMethod()
+    {
+        var valueFromBar = Bar.BarFunction();
+        Fuzz.FuzzMethod(valueFromBar);
+        return valueFromBar;
+    }
+}
+```
+
 * BDD style for NUnit:
 
 ```C#
