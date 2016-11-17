@@ -1,1 +1,0 @@
-The repository contains a foundation of very simple BDD framework. It tries to simplify some repeating patterns.
